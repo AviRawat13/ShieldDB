@@ -58,7 +58,7 @@ The following diagram indicate how the reading process will propagate through al
 When writing a data, by calling a to add(new User()) for example:
 - first we will pass through AtomicShield, it will ensure one parallel access then it will delegate to the next shield
 - the next shield is the InMemoryArrayListReadCacheShield, it will add the data to the cache, then pass new data to the next shield
-- the next and last shield is BottomShield. This shield is the only one that is mandatory, this shield start to read User.json file using the FileStorage class, then convert the json string to a java Collection using the ShieldDBGson mapper to be able to manipulate it. It will add the new data to this collection, them serialize the collection to a json string with the ShieldDBGson mapper, and replace the User.json file content with the previously serialized collection.
+- the next and last shield is BottomShield. This shield is the only one that is mandatory, this shield start to read User.json file using the FileStorage class, then convert the json string to a java Collection using the ShieldDBGson mapper to be able to manipulate it. It will add the new data to this collection, them serialize the collection to a json string with the ShieldDBGson mapper, and replace the User.json file contents with the previously serialized collection.
 
 ### Reading scenario
 
